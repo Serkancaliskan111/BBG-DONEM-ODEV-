@@ -1,8 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int main()
-{
-    printf("Hello world!\n");
+int main() {
+    char sayi[20];
+    printf("Lütfen ondalýklý sayýyý giriniz: ");
+    scanf("%s", sayi);
+
+    int uzunluk = strlen(sayi);
+    for (int i = 0; i < uzunluk; i++) {
+        if (sayi[i] == ',') {
+            sayi[i] = '.';
+        }
+    }
+
+    printf("Düzenlenmiþ sayý: %s\n", sayi);
     return 0;
 }
